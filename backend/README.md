@@ -1,5 +1,18 @@
-# Backend
+# 🚀 Synthetics Backend
 
-This directory is intended for backend services supporting the Synthetics project.
+High-performance backend API for the Synthetics Protocol.
 
-_Implementation details to be added._
+## Features
+- ⚡ Real-time price feeds
+- 🔒 Collateral & position management
+- 🛡️ Risk engine & liquidations
+
+## Quick Start
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+
+## License
+MIT

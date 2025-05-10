@@ -1,5 +1,19 @@
-# Client App
+# 🚀 Synthetics Client
 
-This directory is intended for the frontend client application for the Synthetics project.
+A modern, minimal frontend for the Synthetics Protocol on Solana.
 
-_Implementation details to be added._
+## Features
+- ⚡ One-click minting & burning of synthetic assets
+- 🔒 Wallet integration (Solana)
+- 📈 Real-time price & position updates
+- 📱 Responsive design
+
+## Quick Start
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+
+## License
+MIT

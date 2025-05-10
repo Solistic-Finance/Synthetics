@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-synthetic_sc = "ChoFqza3aBg3s7a2gdzHz9YNizfe7phZKnjh5nz8pKHg"
+synthetic_sc = "G8gtfSCr3gPoNy3nND7jrB82hYqXFu6Nzk17YunyzgQZ"
 
 [registry]
 url = "https://api.apr.dev"

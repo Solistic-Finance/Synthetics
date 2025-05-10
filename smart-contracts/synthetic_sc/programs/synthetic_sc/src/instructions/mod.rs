@@ -1,5 +1,5 @@
 pub mod deposit_collateral;
 pub mod initialize;
 
-pub use deposit_collateral::DepositCollateral;
-pub use initialize::Initialize;
+pub use deposit_collateral::*;
+pub use initialize::*;

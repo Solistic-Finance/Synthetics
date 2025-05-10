@@ -1,9 +1,15 @@
-# Synthetics Project
+# 🚀 Synthetics Protocol
 
-This repository contains a modular system for synthetic asset management, including:
+A modular system for synthetic asset management on Solana.
 
-- **backend/**: Backend services (details TBD).
-- **client-app/**: Frontend client application (details TBD).
-- **smart-contracts/**: On-chain programs and supporting code for synthetic assets, written in Rust and Anchor for Solana.
+## Structure
+- **backend/**: High-performance backend API
+- **client-app/**: Modern frontend client
+- **smart-contracts/**: On-chain Solana programs
 
-See each subdirectory for more details.
+## Quick Start
+```bash
+git clone <repo-url>
+cd synthetics
+# See each subdirectory for setup instructions
+```

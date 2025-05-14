@@ -96,4 +96,31 @@ export class STeslaBalanceService {
       return 0;
     }
   }
+
+  /**
+   * Get the current price of sTesla from on-chain oracle
+   */
+  async getCurrentPrice(): Promise<number> {
+    try {
+      const program = this.blockchainConfigService.getProgram();
+
+      // Derive the PDA for the oracle price account
+      const [oraclePriceAccount] = await PublicKey.findProgramAddress(
+        [Buffer.from('price_oracle'), Buffer.from('TSLA')],
+        program.programId,
+      );
+
+      // Fetch the oracle price data
+      const priceData = await program.account.priceOracle.fetch(
+        oraclePriceAccount,
+      );
+
+      // Return the current price - in a real implementation, this would be properly scaled
+      return Number(priceData.price) / 1000000; // Assuming price is stored with 6 decimal places
+    } catch (error) {
+      console.error('Error fetching sTesla price:', error);
+      // Return a fallback price or throw an error based on your requirements
+      return 0;
+    }
+  }
 }

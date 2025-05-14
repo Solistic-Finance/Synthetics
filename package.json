@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
+    "@nestjs/platform-express": "^9.0.0",
+    "@project-serum/anchor": "^0.26.0",
+    "@solana/web3.js": "^1.78.0",
+    "dotenv": "^16.0.3",
+    "joi": "^17.9.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0"
+  }
+} 

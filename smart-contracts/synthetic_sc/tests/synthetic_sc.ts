@@ -5,6 +5,7 @@ import {
   createMint,
   getOrCreateAssociatedTokenAccount,
   mintTo,
+  TOKEN_PROGRAM_ID,
 } from '@solana/spl-token';
 import { PublicKey, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { expect } from 'chai';
@@ -121,14 +122,14 @@ describe('Synthetic SC Tests', () => {
         .initialize()
         .accounts({
           payer: user.publicKey,
-          vaultAuthority: vaultAuthority,
+          vault_authority: vaultAuthority,
           vault: vaultAccount,
-          vaultUsdc: vaultUsdcAccount,
-          usdcMint: usdcMint,
-          tokenProgram: anchor.spl.token.TOKEN_PROGRAM_ID,
+          vault_usdc: vaultUsdcAccount,
+          usdc_mint: usdcMint,
+          tokenProgram: TOKEN_PROGRAM_ID,
           systemProgram: anchor.web3.SystemProgram.programId,
           rent: anchor.web3.SYSVAR_RENT_PUBKEY,
-        })
+        } as any)
         .rpc();
 
       console.log('Initialize transaction signature', tx);
@@ -163,17 +164,17 @@ describe('Synthetic SC Tests', () => {
       .depositCollateral(new anchor.BN(depositAmount))
       .accounts({
         user: user.publicKey,
-        userUsdc: userUsdcAccount.address,
+        user_usdc: userUsdcAccount.address,
         vault: vaultAccount,
-        vaultUsdc: vaultUsdcAccount,
-        vaultAuthority: vaultAuthority,
-        userCollateral: userCollateralAccount,
-        userSTsla: userSTeslaAccount.address,
-        sTslaMint: sTeslaMint,
-        tokenProgram: anchor.spl.token.TOKEN_PROGRAM_ID,
+        vault_usdc: vaultUsdcAccount,
+        vault_authority: vaultAuthority,
+        user_collateral: userCollateralAccount,
+        user_s_tsla: userSTeslaAccount.address,
+        s_tsla_mint: sTeslaMint,
+        tokenProgram: TOKEN_PROGRAM_ID,
         systemProgram: anchor.web3.SystemProgram.programId,
         rent: anchor.web3.SYSVAR_RENT_PUBKEY,
-      })
+      } as any)
       .rpc();
 
     console.log('Deposit transaction signature', tx);
@@ -237,17 +238,17 @@ describe('Synthetic SC Tests', () => {
       .depositCollateral(new anchor.BN(additionalDeposit))
       .accounts({
         user: user.publicKey,
-        userUsdc: userUsdcAccount.address,
+        user_usdc: userUsdcAccount.address,
         vault: vaultAccount,
-        vaultUsdc: vaultUsdcAccount,
-        vaultAuthority: vaultAuthority,
-        userCollateral: userCollateralAccount,
-        userSTsla: userSTeslaAccount.address,
-        sTslaMint: sTeslaMint,
-        tokenProgram: anchor.spl.token.TOKEN_PROGRAM_ID,
+        vault_usdc: vaultUsdcAccount,
+        vault_authority: vaultAuthority,
+        user_collateral: userCollateralAccount,
+        user_s_tsla: userSTeslaAccount.address,
+        s_tsla_mint: sTeslaMint,
+        tokenProgram: TOKEN_PROGRAM_ID,
         systemProgram: anchor.web3.SystemProgram.programId,
         rent: anchor.web3.SYSVAR_RENT_PUBKEY,
-      })
+      } as any)
       .rpc();
 
     console.log('Additional deposit transaction signature', tx);
@@ -301,17 +302,17 @@ describe('Synthetic SC Tests', () => {
         .depositCollateral(new anchor.BN(10_000_000))
         .accounts({
           user: user.publicKey,
-          userUsdc: invalidTokenAccount.address, // Using wrong token account
+          user_usdc: invalidTokenAccount.address, // Using wrong token account
           vault: vaultAccount,
-          vaultUsdc: vaultUsdcAccount,
-          vaultAuthority: vaultAuthority,
-          userCollateral: userCollateralAccount,
-          userSTsla: userSTeslaAccount.address,
-          sTslaMint: sTeslaMint,
-          tokenProgram: anchor.spl.token.TOKEN_PROGRAM_ID,
+          vault_usdc: vaultUsdcAccount,
+          vault_authority: vaultAuthority,
+          user_collateral: userCollateralAccount,
+          user_s_tsla: userSTeslaAccount.address,
+          s_tsla_mint: sTeslaMint,
+          tokenProgram: TOKEN_PROGRAM_ID,
           systemProgram: anchor.web3.SystemProgram.programId,
           rent: anchor.web3.SYSVAR_RENT_PUBKEY,
-        })
+        } as any)
         .rpc();
 
       // If we reach here, the test failed because the transaction should have failed

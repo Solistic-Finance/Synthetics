@@ -1,10 +1,14 @@
 {
     "scripts": {
         "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
-        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
+        "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+        "test": "anchor test",
+        "build": "anchor build"
     },
     "dependencies": {
-        "@coral-xyz/anchor": "0.31.1"
+        "@coral-xyz/anchor": "0.31.1",
+        "@solana/spl-token": "^0.3.9",
+        "@solana/web3.js": "^1.87.6"
     },
     "devDependencies": {
         "@types/bn.js": "^5.1.0",

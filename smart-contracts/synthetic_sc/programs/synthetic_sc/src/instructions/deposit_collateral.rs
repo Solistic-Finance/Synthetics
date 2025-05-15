@@ -1,5 +1,5 @@
 use crate::events::deposit_event::CollateralDeposited;
-use crate::events::sTesla_minted::sTeslaMinted;
+use crate::events::stesla_minted::STeslaMinted;
 use crate::state::{user_collateral_account::*, vault::*};
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Token, TokenAccount, Transfer, Mint, MintTo};
@@ -104,7 +104,7 @@ pub fn handle(ctx: Context<DepositCollateral>, amount: u64) -> Result<()> {
             mint_now,
         )?;
         user_data.minted_amount += mint_now;
-        emit!(sTeslaMinted {
+        emit!(STeslaMinted {
             user: ctx.accounts.user.key(),
             amount: mint_now,
         });

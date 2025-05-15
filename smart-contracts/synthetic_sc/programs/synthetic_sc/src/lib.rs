@@ -23,4 +23,7 @@ pub mod synthetic_sc {
         crate::instructions::deposit_collateral::handle(ctx, amount)
     }
 
+    pub fn redeem_s_tsla(ctx: Context<RedeemSTSLA>, amount: u64) -> Result<()> {
+        crate::instructions::redeem_sTSLA::handle(ctx, amount)
+    }
 }

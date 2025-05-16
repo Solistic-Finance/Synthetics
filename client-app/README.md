@@ -17,7 +17,7 @@ npm run dev
 
 ## Dashboard
 
-![Synthetic Finance Dashboard](landing.png)
+![Synthetic Finance Dashboard](https://github.com/Solistic-Finance/Synthetics/blob/main/client-app/platform-guide-assets/landing.png)
 
 ## License
 MIT

@@ -68,4 +68,9 @@ export class PriceService {
       this.logger.error(`Error updating sTSLA price: ${error.message}`);
     }
   }
+
+  async getCurrentSTeslaPrice(): Promise<number> {
+    const latest = await this.getLatestPrice('sTSLA');
+    return latest?.price ?? 0;
+  }
 }

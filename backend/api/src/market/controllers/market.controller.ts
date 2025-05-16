@@ -132,4 +132,15 @@ export class MarketController {
       toDate,
     );
   }
+
+  @ApiOperation({ summary: 'Get current platform sTSLA price' })
+  @ApiResponse({
+    status: 200,
+    description: 'Current sTSLA price',
+    type: Number,
+  })
+  @Get('price/sTSLA/current')
+  async getCurrentSTeslaPrice(): Promise<number> {
+    return this.priceService.getCurrentSTeslaPrice();
+  }
 }

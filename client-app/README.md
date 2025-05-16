@@ -15,5 +15,10 @@ cp .env.example .env
 npm run dev
 ```
 
+## Dashboard
+
+![Synthetic Finance Dashboard](landing.png)
+
 ## License
 MIT
+

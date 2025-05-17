@@ -19,7 +19,13 @@ export class CacheService {
   }
 
   async reset(): Promise<void> {
-    await this.cacheManager.reset();
+    if (typeof this.cacheManager['clear'] === 'function') {
+      await this.cacheManager['clear']();
+    } else {
+      console.warn(
+        'Cache manager does not have a clear method, reset operation not supported',
+      );
+    }
   }
 
   /**

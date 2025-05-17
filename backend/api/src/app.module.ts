@@ -7,6 +7,7 @@ import { DatabaseModule } from './database/database.module';
 import { MarketModule } from './market/market.module';
 import { RedisCacheModule } from './cache/cache.module';
 import { ScheduleModule } from '@nestjs/schedule';
+import { DpsnModule } from './dpsn/dpsn.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ScheduleModule } from '@nestjs/schedule';
     RedisCacheModule,
     BlockchainModule,
     MarketModule,
+    DpsnModule,
   ],
   controllers: [AppController],
   providers: [AppService],
